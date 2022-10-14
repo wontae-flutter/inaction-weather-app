@@ -3,7 +3,16 @@ import "package:weather_app/models/model_forecast.dart";
 import 'package:weather_app/enums/enum_date.dart';
 
 class TableWeekend extends StatelessWidget {
-  const TableWeekend({super.key});
+  final Forecast forecast;
+
+  const TableWeekend({
+    super.key,
+    required this.forecast,
+  });
+
+  IconData _getWeatherIcon(Weather weather) {
+    return Icon(Icons.wallet);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +26,18 @@ class TableWeekend extends StatelessWidget {
           2: FixedColumnWidth(100.0),
           3: FixedColumnWidth(100.0),
         },
-        children: [],
+        children: List.generate(7, (index) {
+          Day day = forecast.days[index];
+          Weather weatherPerHour = day.weatherPerHours[0];
+          final weatherIcon = _getWeatherIcon(weatherPerHour);
+          return TableRow(
+            children: [
+              TableCell(child: Padding(
+                padding: ,
+              ))
+            ]
+          )
+        }),
       ),
     );
   }

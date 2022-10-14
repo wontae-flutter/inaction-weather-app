@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:weather_app/models/model_city.dart';
 
 class Forecast {
@@ -16,13 +17,13 @@ class Forecast {
 }
 
 class Day {
-  List<Weather> hourlyWeather;
+  List<Weather> weatherPerHours;
   DateTime date;
   int lowestTemp;
   int heighestTemp;
 
   Day({
-    required this.hourlyWeather,
+    required this.weatherPerHours,
     required this.date,
     required this.lowestTemp,
     required this.heighestTemp,
@@ -32,9 +33,9 @@ class Day {
     if (hour == 0) {
       // DateTime hours run 1,2,3...22,23,0
       // 0 == midnight
-      return day.hourlyWeather.last;
+      return day.weatherPerHours.last;
     }
-    return day.hourlyWeather
+    return day.weatherPerHours
         .firstWhere((Weather weather) => weather.dateTime.hour >= hour);
   }
 }
@@ -76,6 +77,20 @@ class Temperature {
   });
 }
 
+List<int> hours = [3, 6, 9, 12, 15, 18, 21, 24];
+
 enum TemperatureUnit { celsius, fahrenheit }
 
+Map<TemperatureUnit, String> temperatureLabels = {
+  TemperatureUnit.celsius: "°C",
+  TemperatureUnit.fahrenheit: "°F",
+};
+
 enum WeatherDescription { clear, cloudy, sunny, rain }
+
+Map<WeatherDescription, IconData> weatherIcons = {
+  WeatherDescription.clear: Icons.wb_sunny,
+  WeatherDescription.cloudy: Icons.wb_cloudy,
+  WeatherDescription.sunny: Icons.brightness_2,
+  WeatherDescription.rain: Icons.beach_access
+};
