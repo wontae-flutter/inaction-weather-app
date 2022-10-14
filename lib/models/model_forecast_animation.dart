@@ -1,4 +1,6 @@
 import "dart:ui";
+import "package:weather_app/models/model_weather.dart";
+import "package:weather_app/models/model_day.dart";
 import "package:weather_app/models/model_forecast.dart";
 import 'package:weather_app/styles.dart';
 
@@ -124,8 +126,8 @@ class ForecastAnimation {
     int currentHour,
   ) {
     final newSelection = Day.getWeatherAt(
-      day,
       currentHour,
+      day,
     );
 
     final endAnimationState = ForecastAnimation.stateForNextSelection(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:weather_app/models/model_forecast.dart";
-import 'package:weather_app/enums/enum_date.dart';
+import 'package:weather_app/utils/util_date.dart';
 
 class TableWeekend extends StatelessWidget {
   final Forecast forecast;

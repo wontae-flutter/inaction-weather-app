@@ -1,4 +1,4 @@
-import 'package:weather_app/models/_model_country.dart';
+import 'package:weather_app/models/model_country.dart';
 
 List<City> allAddedCities = [
   City(name: "Portland", country: Country.US, active: true, listIdx: 0),
