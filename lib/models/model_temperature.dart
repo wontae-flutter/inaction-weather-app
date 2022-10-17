@@ -1,3 +1,4 @@
+//* db에서 올라오는걸 해야하는데, 사실 모델은 아니지 않나...
 class Temperature {
   int current;
   TemperatureUnit temperatureUnit;

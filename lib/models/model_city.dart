@@ -1,3 +1,4 @@
+//? model/app_settings.dart
 import 'package:weather_app/models/model_country.dart';
 
 List<City> allAddedCities = [
@@ -13,6 +14,7 @@ List<City> allAddedCities = [
   City(name: "San Francisco", country: Country.US, active: false, listIdx: 9),
   City(name: "Tokyo", country: Country.JP, active: false, listIdx: 10),
 ];
+//! activeCity는 그냥 allAddedCities[0]일 뿐
 
 class City {
   late String name;

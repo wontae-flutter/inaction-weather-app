@@ -12,7 +12,7 @@ class ForecastProvider {
   late Forecast forecast;
   DateTime now = DateTime.now();
   WeatherRepository weatherRepositry = WeatherRepository();
-
+  late Weather selectedHourWeather;
   //! City를 위한 getter와 setter가 있던데 이게 왜 필요한가?
 
   ForecastProvider(this.city) {
@@ -25,5 +25,7 @@ class ForecastProvider {
         ),
         forecast);
     weather = Day.getWeatherAt(DateTime.now().toLocal().hour, day);
+    selectedHourWeather = Day.getWeatherAt(DateTime.now().toLocal().hour, day);
   }
+  //* 뭐 get, fetch 함수의 내부가 repository로 되는 것이지
 }

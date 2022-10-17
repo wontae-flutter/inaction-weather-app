@@ -121,7 +121,7 @@ class ForecastAnimation {
     }
   }
 
-  static ForecastAnimation getNextForecastAnimation(
+  static ForecastAnimation getDataForNextAnimationState(
     Day day,
     int currentHour,
   ) {
@@ -137,7 +137,7 @@ class ForecastAnimation {
     return endAnimationState;
   }
 
-  static getCurrentHourFromTabIndex(int index, Day day) {
+  static getSelectedHourFromTabIndex(int index, Day day) {
     return day.weatherPerHours[index].dateTime.hour;
   }
 }
